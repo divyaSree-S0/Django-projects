@@ -1,0 +1,244 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO list</title>
+    <style>
+        .header{
+            margin-top: 30px;                                                                                                               
+            display: flex;
+            justify-content: center; /* Center the header content horizontally */
+          }
+          .header div{
+            background: red;
+            width: 100%;    
+            {% comment %} padding: 10px; /* Add padding to the header content */                         {% endcomment %}
+            {% comment %} border-radius: 3px; {% endcomment %}
+            {% comment %} padding: 5px 10px 10px 5px; 
+            background-color: grey;
+            color: white;
+            text-align: center;
+          }
+          .lg div:hover{
+            background-color: grey;
+          }
+          .header .lg{
+            margin-left: 1%;
+          }
+          .header i{
+            margin-right: 4px;
+          }
+    </style>
+</head>
+<body>
+    <div>
+    <header>
+        <div class="header">
+            <div class="i"><h1>Tasks</h1></div>
+            <div class="lg"><a href="{% url 'logout' %}" class="btn btn-primary">Logout</a></div>
+        </div>
+    </header>
+    </div>
+    <ul>
+        {% csrf_token %} 
+        {% for i in all_items %}
+        <li>
+            {{i.content}}<form action="/deletetask/{{i.id}}/" method = "post">{% csrf_token %}
+            <input type="submit" value="Delete">
+            </form> 
+            <p>
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO list</title>
+    <style>
+        body {
+            background-color: #121212; /* Set a dark background color */
+            color: white; /* Set text color */
+            font-family: 'Poppins',sans-serif;
+            {% comment %} font-family: Arial, sans-serif; /* Choose a suitable font */  {% endcomment %
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .header {
+            display: flex;
+            font-family: 'Poppins',sans-serif;
+            justify-content: space-between; /* Align items at the ends */
+            align-items: center; /* Vertically center items */
+            background-color: #333; /* Dark color for header */
+            padding: 10px; /* Add padding to the header */
+        }
+        .header h1 {
+            margin: 0; /* Remove margin for h1 */
+        }
+        .lg a {
+            text-decoration: none; /* Remove underline from link */
+            color: white; /* Set text color */
+            padding: 5px 10px; /* Add padding to the link */
+            border-radius: 3px; /* Add a slight border-radius */
+            background-color: #555; /* Darker color for the link */
+        }
+        .lg a:hover {
+            background-color: #777; /* Darker color on hover */
+            text-decoration: underline; /* Add underline on hover */
+        }
+        form *{
+            font-family: 'Poppins',sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="i">
+                <h1>Task</h1>
+            </div>
+            <div class="lg">
+                <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+    </header>
+    <ul>
+        {% csrf_token %} 
+        {% for i in all_items %}
+        <li>
+            {{i.content}}<form action="/deletetask/{{i.id}}/" method = "post">{% csrf_token %}
+            <input type="submit" value="Delete">
+            </form> 
+            <p>
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>  {% endcomment %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task list</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        body {
+            background-color:#f0f0f0;/*dark-color- #121212;*/
+            color: black;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            height: 40px;
+            display: flex;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #06041d;
+            padding: 10px;
+        }
+        {% comment %} .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        } {% endcomment %}
+        .header h1 {
+            margin: 0;
+        }
+        .lg a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #30aece;
+        }
+        .lg a:hover {
+            background-color: green;
+            text-decoration: underline;
+        }
+        
+        .main-content {
+            background-color: #f7f7f7;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 20px;
+        }
+        
+        .task-list {
+            list-style: ; /* Remove default list styles */
+            padding: 0;
+        }
+        
+        .task-list li {
+            margin-bottom: 10px;    /* Spacing between tasks */
+            list-style: number bold;
+            margin-left: 20px;
+            /* Additional styling for each task item if needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="i">
+                <h1>Your Task(s)</h1>
+            </div>
+            <div class="lg">
+                <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <ul class="task-list">
+            {% for task in user.taskassigned_set.all %}
+                <li>
+                    <h3>{{ task.task.content }}</h3>
+                    <p></p>
+                </li>
+            {% empty %}
+                {% if no_tasks_message %}
+                    <h1>{{ no_tasks_message }}</h1>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% comment %} <ul> 
+        {% for task in user.taskassigned_set.all %}
+            <li>
+               <h3> {{task.task.content}}<h3>
+                <p>
+                </p>
+            </li>
+        {% empty %}
+            {% if no_tasks_message %}
+               <h1> {{ no_tasks_message }}</h1>
+            {% endif %}
+        {% endfor %}
+    </ul> {% endcomment %}
+</body>
+</html> 

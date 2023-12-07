@@ -1,0 +1,239 @@
+{% comment %} <!-- FILEPATH: /c:/Users/dcosi/Code files/VS code files/Django projects/todo_webapp/src/registration/templates/adminpage.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Admin Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        body{
+            font-family: 'Poppins',sans-serif;
+            background-color:#7d9bc3;     /*9397f0,d1cee6;*/
+        }
+        .header {
+            display: flex;
+            font-family: 'Poppins',sans-serif;
+            color: white;
+            justify-content: space-between; /* Align items at the ends */
+            align-items: center; /* Vertically center items */
+            background-color: #06041d; /* #06041d,7d9bc3 Dark color for header */
+            padding: 10px; /* Add padding to the header */
+        }
+        .header h2 {
+            margin: 0; /* Remove margin for h1 */
+        }
+        .lg a {
+            text-decoration: none; /* Remove underline from link */
+            color: white; /* Set text color */
+            padding: 5px 10px; /* Add padding to the link */
+            border-radius: 3px; /* Add a slight border-radius */
+            background-color: #555; /* Darker color for the link */
+        }
+        .lg a:hover {
+            background-color: #777; /* Darker color on hover */
+            text-decoration: underline; /* Add underline on hover */
+        }
+    </style>
+</head>
+<body>  
+    <nav class="navbar navbar-expand navbar-dark bg-dark"> 
+        <div class="header">
+            <div><h2>Add Task(s)</h2></div>
+            <div class="lg"><a href="{% url 'logout' %}" class="btn btn-primary">Logout</a></div>
+        </div>
+    </nav>
+    <form method="POST" action="{% url 'add_task' %}">
+        {% csrf_token %}
+        <p></p>
+        <label for="user">User:</label>
+        <select name="user" id="user">
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+        </select>
+        
+        <br><br>
+        <label for="task">Task:</label>
+        <input type="text" name="add_task" id="add_task">
+        <br><br>
+        <input type="submit" value="Add Task">
+    </form>
+    <h2>Tasks</h2>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }}</li>
+            <ul>
+                {% for task_assigned in user.taskassigned_set.all %}
+                    <li>{{ task_assigned.task.content }}</li>
+                    <form action="/deletetask/{{task_assigned.id}}/" method = "post">{% csrf_token %}
+                    <input type="submit" value="Delete"> 
+                    <p>
+                    </p>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        
+            
+        
+    </ul>
+</body>
+</html>
+
+ {% endcomment %}
+
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #06041d;
+            padding: 10px;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+        h1 {
+            margin-left: 15px;
+        }
+
+        .lg a {
+            text-decoration: none;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #30aece;
+        }
+
+        .lg a:hover {
+            background-color: green;
+            text-decoration: underline;
+            color: white;
+        }
+        .section {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }    
+        .task-field {
+            width: 300px;
+            border-radius: 1.5px;
+            {% comment %} border: 1px solid #ccc; {% endcomment %}
+            padding: 5px;
+        }
+        {% comment %} .section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        } {% endcomment %}
+
+        .tasks {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: number;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 25%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #30acee;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="header">
+            <div><h2>Add Task(s)</h2></div>
+            <div class="lg"><a href="{% url 'logout' %}" class="btn btn-primary">Logout</a></div>
+        </div>
+    </nav>
+
+    <div class="section">
+        <!-- User and Task Addition Section -->
+        <form method="POST" action="{% url 'add_task' %}">
+            {% csrf_token %}
+            <label for="user">User:</label>
+            <select name="user" id="user">
+                {% for user in users %}
+                    <option value="{{ user.id }}">{{ user.username }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="task">Task:</label>
+            <input class="task-field" type="text" name="add_task" id="add_task">
+            <br><br>
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
+    <h1>Task list</h1>
+
+    <!-- Task Display Section -->
+    {% for user in users %}
+        <div class="section">
+            <h2>{{ user.username }}'s Tasks</h2>
+            <div class="tasks">
+                <ul>
+                    {% for task_assigned in user.taskassigned_set.all %}
+                        <li>{{ task_assigned.task.content }}
+                            <form action="/deletetask/{{ task_assigned.id }}/" method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Delete">
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
