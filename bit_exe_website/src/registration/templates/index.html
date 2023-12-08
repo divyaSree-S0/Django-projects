@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conveyor Maintenance System</title>
+    <link rel="stylesheet" href={% static "style.css"%}>
+</head>
+<body>
+    <!-- Include the navbar -->
+    {% comment %} <include src="Navbar.html"></include> {% endcomment %}
+    {% include 'Navbar.html'%}
+
+    <main>
+        <!-- Include other sections as needed -->
+        {% comment %} <include src="pulley_status.html"></include>
+        <include src="maintenance_schedule.html"></include> {% endcomment %}
+        {% include 'pulley_status.html'%}
+        {% include 'maintenance_schedule.html'%}
+    </main>
+
+    <footer>
+        <!-- Add a footer if needed -->
+    </footer>
+
+    <script src={% static "script.js" %}></script>
+</body>
+</html>

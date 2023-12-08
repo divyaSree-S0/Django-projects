@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ministry of Mines - Registration</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: peru;
+      margin: 0;
+      padding: 250px;
+      background: url('Mines_project.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: burlywood;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      /* background-image: url('bg_img.png');
+      background-size: cover;
+      background-attachment: fixed; */
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="file"] {
+      width: 95%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <h1>Ministry of Mines - Registration</h1>
+    <form id="registrationForm">
+      <label for="fullName"><h3>Full Name</h3></label>
+      <div style="display: flex;">
+        <input type="text" id="firstName" placeholder="First Name" style="flex: 1; margin-right: 10px;" required>
+        <input type="text" id="lastName" placeholder="Last Name" style="flex: 1;" required>
+      </div>
+      
+      
+
+      
+      
+
+      <label for="email"><h3>Email</h3></label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      
+      
+
+      <label for="password"><h3>Password</h3></label>
+      <div style="display: flex;">
+        <input type="password" id="password" placeholder="Enetr your password" style="flex: 1; margin-right: 10px;" required>
+        <input type="password" id="confirmPassword" placeholder="Re-enter your password" style="flex: 1;" required>
+      </div>
+
+      
+      
+
+      <label for="mineName"><h3>Mine Name/Location</h3></label>
+      <input type="text" id="mineName" placeholder="Enter the mine name/location" required>
+
+      
+      
+
+      <label for="License"><h3>License</h3></label>
+      <input type="file" id="certifications" accept=".pdf,.doc,.docx">
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <p class="Declaration">By clicking Sign Up, you are agreeing to our<a href="#">Terms of Service</a> , <a href="#">Privacy Policy</a> , and any other<a href="#">applicable policies or guidelines.</a> .</p>
+      <br/>
+      <br/>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code for form submission handling
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Retrieve form field values (as before)
+
+        // Perform any additional validation or processing here
+
+        // Display form data (for testing purposes)
+        console.log("First Name:", firstName);
+        console.log("Last Name:", lastName);
+        console.log("Email:", email);
+        console.log("Password:", password);
+        console.log("Confirm Password:", confirmPassword);
+        console.log("Mine Name/Location: ", mineName);
+
+        // Clear form fields
+        this.reset();
+
+        // Show registration success message using alert
+        alert("Registration Successful!");
+
+        // If you want to update an HTML element with the success message, you can do something like:
+        // var successMessageElement = document.getElementById("successMessage");
+        // successMessageElement.innerHTML = "Registration Successful!";
+    });
+</script>
+
+
+</body>
+</html>  
