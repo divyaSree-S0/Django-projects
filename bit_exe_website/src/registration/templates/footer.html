@@ -1,0 +1,71 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static "footer.css"%}">
+  <style>
+    #myFooter {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1; /* Set a background color if needed */
+      padding: 15px;
+      text-align: center;
+      display: none; /* Initially hide the footer */
+    }
+  </style>
+
+</head>
+<body>
+  <footer id="myFooter" >
+    <div >
+      
+      <div >
+        <div class="footer-links">
+          <nav>
+            <h3 class="footer h3">Related Links</h3>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="{% url "about"%}">About Us</a></li>
+              <li><a href="#">Real-time maintenance</a></li>
+              {% comment %} <li><a href="#">Contact</a></li> {% endcomment %}
+            </ul>
+          </nav>
+          <address class="footer-address">
+            <h3 class="footer h3">Address</h3>
+            <p>123 Main Street<br>Anytown, CA 12345</p>
+            <p>Phone: (123) 456-7890</p>
+
+            <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+
+          </address>
+        </div>
+      </div>
+    </div>
+    <div >
+      <div >
+        <p class="copyright">Copyright © 2023 My Company. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+    <script>
+      document.addEventListener("scroll", function() {
+        var footer = document.getElementById("myFooter");
+        var scrollPosition = window.scrollY + window.innerHeight;
+        var bodyHeight = document.body.offsetHeight;
+  
+        // Show the footer when the user scrolls down to a certain point
+        if (scrollPosition >= bodyHeight - window.innerHeight) {
+          footer.style.display = "block";
+        } else {
+          footer.style.display = "none";
+        }
+      });
+    </script>
+  
+  
+</body>
+</html>

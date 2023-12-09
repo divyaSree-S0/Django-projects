@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href={% static "navbar.css" %}>
+</head>
+<body>
+    <nav id="top-nav"></nav>
+  
+    <nav id="main-nav">
+      <img src={% static "logo.png"%} id="main-nav img">
+        <ul>
+          
+            <li><a href="">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a class="cta" href="{% url 'login'%}"><button> Login/Register  
+          
+
+        </button></a>
+    </nav>
+    </body>
+</html>

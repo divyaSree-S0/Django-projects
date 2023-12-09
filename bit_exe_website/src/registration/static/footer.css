@@ -1,0 +1,97 @@
+body, footer {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /* Remove default body margin */
+}
+
+footer {
+    background-color: #131C23;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #FFFFFF; 
+    font-style: normal;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer li {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.footer-links a {
+    font-size: 18px;
+    color: #ADB5DB;
+}
+
+.footer-address p {
+    font-size: 16px;
+    color: #ADB5DB;
+    font-style: normal; /* Set font style to normal */
+    
+    
+}
+
+.footer-text {
+    margin-bottom: 0;
+}
+
+.footer-address {
+    text-align: left; /* Align the address text to the left */
+    margin-right: 150px; /* Adjust the margin to move the address to the left */
+}
+
+.copyright {
+    text-align: center;
+    margin-bottom: 0;
+    color: #FFFFFF; /* Set the color of the copyright text to white */
+}
+
+@media screen and (max-width: 768px) {
+    footer p {
+        margin-bottom: 15px;
+    }
+
+    footer nav,
+    footer address {
+        margin-bottom: 20px;
+    }
+
+    footer div.row {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack links and address vertically on smaller screens */
+    }
+
+    .footer-address {
+        text-align: left; /* Align the address text to the left on smaller screens */
+        margin-right: 0; 
+        /* Remove the right margin on smaller screens */
+    }
+}
+
+.footer-h3 {
+    text-align: justify;
+    margin: 0 auto;
+}

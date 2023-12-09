@@ -83,6 +83,7 @@ DATABASES = {
           'NAME': 'BIT_exe',
           'HOST': 'localhost',
           'PORT': 27017,
+          'ENFORCE_SCHEMA':False,
       }
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
