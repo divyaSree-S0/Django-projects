@@ -10,4 +10,3 @@ loginWrap.style.transition = 'margin-top 0.5s ease-in-out';
 setTimeout(() => {
   loginWrap.style.marginTop = '50px';
 }, 100);  
-

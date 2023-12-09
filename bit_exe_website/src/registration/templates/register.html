@@ -11,6 +11,8 @@
       <div class="login-html">
         <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Sign Up</label>
         <div class="login-form">
+          <form class="sign-up-htm" action="index.html" method="post">
+            {% csrf_token %}
           <div class="sign-up-htm">
             <div class="group">
               <label for="user" class="label">Username</label>
@@ -36,10 +38,11 @@
               <a href="login.html">Already Member?</a>
             </div>
           </div>
+        </form>
         </div>
       </div>
     </div>
   </div>
-  <script src={% static "script.js" %}></script>
+  <script src="script.js"></script>
 </body>
 </html>

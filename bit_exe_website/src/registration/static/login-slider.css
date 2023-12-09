@@ -2,11 +2,11 @@
 body {
     margin: 0;
     color: #6a6f8c;
-    background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center fixed;
+    background: url(https://nepa.gov.in/scripts/extra-images/slider/Modi%20Banner_English.jpg) no-repeat center fixed;
     background-size: cover;
     font: 600 16px/18px "Open Sans", sans-serif;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgba(40, 57, 101, 0.9);
+    background-color: rgba(234, 171, 115, 0.9);
 
    
 }
@@ -40,9 +40,9 @@ a {
     width: 100%;
     margin: 0 auto;
     max-width: 525px;
-    min-height: 730px;
+    min-height: 670px;
     position: relative;
-    margin-top: 50px;
+    margin-bottom: 50px;
    
 }
 
@@ -55,6 +55,7 @@ a {
   
   background: rgba(40, 57, 101, 0.9);
   padding: 90px 70px 110px 70px;
+  
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm {
@@ -99,7 +100,7 @@ a {
   transform-style: preserve-3d;
 }
 .login-form .group {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .login-form .group .label,
 .login-form .group .input,
@@ -120,7 +121,7 @@ a {
 }
 .login-form .group .label {
   color: #aaa;
-  font-size: 14px;
+  font-size: 12px;
 }
 .login-form .group .button {
   background: #1161ee;
@@ -198,16 +199,6 @@ a {
     top: 0;
     left: 0;
     
-  }
-  .container-down {
-    margin: 0 auto; 
-    max-width: 525px; 
-    min-height: 670px; 
-    position: relative;
-    
-  }
-  .container-down .login-wrap {
-    margin-top: 50px; 
   }
   
   
