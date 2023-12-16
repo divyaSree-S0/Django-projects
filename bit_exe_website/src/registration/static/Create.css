@@ -1,0 +1,110 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("http://i.imgur.com/w16HASj.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.card {
+    padding: 10px 20px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border: none !important;
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+    max-width: 600px; /* Set the maximum width */
+    width: 100%; /* Use 100% width */
+    height: auto; /* Allow height to adjust based on content */
+    margin: -10px auto; /* Center the box horizontally */
+}
+
+
+.form-card {
+    margin: 0 auto;
+    text-align: left;
+
+     /* Center the form horizontally */
+}
+
+/* Your existing styles remain the same */
+
+  
+  .form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .form-control-label {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #848080;
+    border-radius: 0.25rem;
+  }
+  
+  .btn {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0062cc;
+  }
+.blue-text{
+    color: #00BCD4
+}
+.form-control-label{
+    margin-bottom: 0
+}
+input, textarea, button{
+    padding: 8px 40px;
+    border-radius: 6px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #787676;
+    font-size: 18px !important;font-weight: 300
+}
+input:focus, textarea:focus{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;box-shadow: none !important;
+    border: 1px solid #00BCD4;outline-width: 0;
+    font-weight: 400
+}
+.btn-block {
+    text-transform: uppercase;
+    font-size: 10px !important;
+    font-weight: 400;
+    height: 43px;
+    width: 150px;
+    cursor: pointer;
+    margin: 0 auto; /* Center the buttons horizontally */
+}
+
+.btn-block:hover{
+    color: #fff !important
+}
+button:focus{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;outline-width: 0
+}
+.container {
+    padding: 2rem;
+  }
+  

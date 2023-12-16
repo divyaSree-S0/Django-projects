@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Create.css">
+    
+   
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+        
+                <div class="card">
+                    <h1 class="text-center mb-2">Create System</h1>
+                    <form class="form-card" onsubmit="event.preventDefault()">
+                        <!-- Your form content remains the same -->
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                 <label class="form-control-label px-3">Name<span class="text-danger">
+                                 </span></label> 
+                                 <input type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)">
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                 <label class="form-control-label px-3">Total Number of pulleys
+                                    <span class="text-danger"></span>                                  
+                                </label> 
+                                <input type="number" id="number" name="number" placeholder="Enter Number" onblur="validate(2)"> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                 <label class="form-control-label px-3">Number of Pulleys in shoe architecture
+                                    <span class="text-danger"> </span>
+                                </label> 
+                                <input type="number" id="number" name="number" placeholder="" onblur="validate(3)"> 
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                 <label class="form-control-label px-3">Thickness of the belt
+                                    <span class="text-danger"> 
+
+                                    </span></label> 
+                                    <input type="number" id="number" name="number" placeholder="" onblur="validate(4)"> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Length of the Belt
+                                    <span class="text-danger"></span></label>
+                                     <input type="number" id="length" name="length" placeholder="" onblur="validate(5)"> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Width of The Belt
+                                    <span class="text-danger"> </span>
+                                </label>
+                                 <input type="number" id="ans" name="ans" placeholder="" onblur="validate(6)"> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Mine Location
+                                    <span class="text-danger"> </span>
+                                </label>
+                                 <input type="text" id="Location" name="Location" placeholder="" onblur="validate(6)"> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Industry Location
+                                    <span class="text-danger"> </span>
+                                </label>
+                                 <input type="text" id="Location" name="Location" placeholder="" onblur="validate(6)"> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group "> 
+                                <button type="submit" class="btn-block btn-primary">cancel</button> 
+                                <button type="submit" class="btn-block btn-primary">submit</button> 
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Create.js"></script>
+</body>
+</html>

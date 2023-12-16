@@ -1,4 +1,4 @@
-{% load static%}
+{% comment %} {% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +11,10 @@
       position: fixed;
       bottom: 0;
       width: 100%;
-      background-color: #f1f1f1; /* Set a background color if needed */
+      background-color: black; /* Set a background color if needed */
       padding: 15px;
       text-align: center;
-      display: none; /* Initially hide the footer */
+      {% comment %} display: none; /* Initially hide the footer */ {% endcomment %
     }
   </style>
 
@@ -31,7 +31,7 @@
               <li><a href="">Home</a></li>
               <li><a href="{% url "about"%}">About Us</a></li>
               <li><a href="#">Real-time maintenance</a></li>
-              {% comment %} <li><a href="#">Contact</a></li> {% endcomment %}
+              {% comment %} <li><a href="#">Contact</a></li> {% endcomment %
             </ul>
           </nav>
           <address class="footer-address">
@@ -64,8 +64,58 @@
           footer.style.display = "none";
         }
       });
-    </script>
+    </script> 
   
   
 </body>
+</html> {% endcomment %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static "footer.css" %}">
+  
+
+</head>
+<body>
+  <p>
+  </p>
+  <div>
+    <footer id="main-footer">
+      <div class="container ">
+        <div class="row">
+          <div class="footer-links">
+            <nav>
+              <h3 class="footer h3 mt-3">Related Links</h3>
+              <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+              </ul>
+            </nav>
+            <address class="footer-address mt-3">
+              <h3 class="footer h3">Address</h3>
+              <p>123 Main Street<br>Anytown, CA 12345</p>
+              <p>Phone: (123) 456-7890</p>
+              <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            </address>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="copyright">Copyright © 2023 My Company. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <!---footerrr-->
+
+<!-- Bootstrap JS and Popper.js scripts of home -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+  
+</body>
 </html>
+

@@ -1,116 +1,131 @@
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    {% comment %} <style>
         .Heading {
             color: black;
             font-style: oblique;
         }
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        .home {
+            font-size: 23px;
+            font-weight: bold;
+            color: black;
+        }
+        .SL {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .BL1 {
+            color: wheat;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style> {% endcomment %}
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">iCoder</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/indexan">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Topics
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">DSA with JAVA</a></li>
-                            <li><a class="dropdown-item" href="#">Web Development</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Feedback</a></li>
-                        </ul>
-                    </li>
-                    <!-- <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li> -->
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <div class="mx-2">
-                    <button class="btn btn-outline-danger">Sign-up/Login</button>
-                </div>
-            </div>
+    <script>window.onscroll = function () {
+        if (window.scrollY >= document.documentElement.scrollHeight - window.innerHeight) {
+            document.getElementById("main-footer").style.opacity = 1;
+        } else {
+            document.getElementById("main-footer").style.opacity = 0;
+        }
+    };
+    </script>
+    {% include 'Navbar.html' %}
+
+        
+    {% comment %} <div style="background-color: darkblue; height: 20px;"></div>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 border-bottom bg-body-tertiary">
+        <div class="col-md-3 mb-2 mb-md-0 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-4 border-bottom bg-body-tertiary">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <img src="{% static 'logo.png' %}" alt="" class="bi" width="300" height="60">
+            </a>
         </div>
-    </nav>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary" aria-current="page">Home</a></li>
+            <li><a href="{% url 'about' %}" class="nav-link px-2 link-secondary rgba-blue-light">About Us</a></li>
+            <li><a href="{% url 'realtime' %}" class="nav-link px-2 link-secondary rgba-blue-light">Real-time Maintenance</a></li>
+        </ul>
+        <div class="dropdown text-end">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle me-4"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small bg-dark" style="color: white;">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">
+                        <label for="Profile" style="color: white;">Profile</label>
+                    </a></li>
+                <li>
+                    <hr class="dropdown-divider-white">
+                </li>
+                <li><a class="dropdown-item mb-2" href="{% url 'home' %}">
+                        <label for="Sign Out" style="color: white;">Sign Out</label>
+                    </a></li>
+            </ul>
+        </div>
+    </header> {% endcomment %}
+    <div class="section-title">
+        <h2 class="text-decoration-underline px-3" style="color: brown; font-weight: bold;">About</h2>
+        <p>
+        <h4 style="font-style: italic; color: black; font-weight: bold; align-content: center;">"Revolutionizing
+            Conveyor Reliability: Predictive Maintenance through Smart ML Solutions"</h4>
+        </p>
+    </div>
 
     <div class="container my-4">
         <div class="row featurette d-flex justify-content-center align-items-center">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it's that good. <span
-                        class="text-body-secondary">See for yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place.</p>
+                <h4 class="featurette-heading fw-normal lh-1"> <span class="text-body-dark"
+                        style="font-style: oblique;"><b><u>Problem Statement</u></b></span></h4>
+                <p class="lead bg-body-tertiary">Within our intricate conveyor systems, comprising over 18,000 poly
+                    pulleys, a persistent challenge arises due to the frequent wear and tear experienced by these
+                    crucial components. The core issue lies in the operational disruptions caused by the wear and tear,
+                    often leading to unplanned stoppages of the conveyor system. These unexpected halts force us into
+                    emergency replacements to resume normal functionality promptly. The repercussions extend beyond mere
+                    interruptions in our day-to-day operations, as the reactive approach to pulley failures incurs
+                    substantial costs. The financial burden associated with emergency replacements adds complexity to
+                    our operational landscape, prompting the need for a more proactive and sustainable solution.</p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                height="500" src="https://source.unsplash.com/500x500/?code,laptop" alt="">
+                    height="500" src="{% static 'ps1.jpg' %}" alt="">
             </div>
         </div>
+        <div class="row featurette d-flex justify-content-center align-items-center min-height-content">
+            <div class="col-md-7 ">
+                <h4 class="featurette-heading fw-normal lh-1"> <span class="text-body-dark"
+                        style="font-style: oblique;"><b><u>Proposed Solution</u></b></span></h4>
+                <p class="lead bg-body-tertiary">Our solution involves deploying advanced machine learning algorithms
+                    that analyze past performance data, enabling us to foresee pulley wear and identify vulnerable
+                    points. This proactive strategy empowers us to schedule timely replacements, preventing unexpected
+                    downtime and optimizing the overall efficiency of the conveyor system.
 
-        <div class="row featurette d-flex justify-content-center align-item-center">
-            <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
-                        class="text-body-secondary">It’ll blow your mind.</span></h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                height="500" src="https://source.unsplash.com/500x500/?code,screen" alt="">
-            </div>
-        </div>
-
-        <div class="row featurette d-flex justify-content-center align-items-center">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
-                        class="text-body-secondary">See for yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place.</p>
+                    This heading and structure convey a sense of innovation and problem-solving, highlighting the use of
+                    ML for predictive maintenance in the context of your conveyor system. Feel free to customize it
+                    further to align with your brand voice and style.</p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                height="500" src="https://source.unsplash.com/500x500/?code,company" alt="">
+                    height="500" src="{% static 'solution.jpg' %}" alt="">
             </div>
         </div>
+    </div>
+    {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
-        <div class="container my-3">
-            <p>© 2023-2025 Company, iCoder. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-        </div>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6Q1TKl8ukl7Vilxs8VO3ApmF1g9CC"
+    crossorigin="anonymous"></script>
 </body>
-
 </html>

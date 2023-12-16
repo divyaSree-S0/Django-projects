@@ -79,17 +79,33 @@ WSGI_APPLICATION = 'bit_exe_website.wsgi.application'
 
 DATABASES = {
     'default': {
-          'ENGINE': 'djongo',
-          'NAME': 'BIT_exe',
-          'HOST': 'localhost',
-          'PORT': 27017,
-          'ENFORCE_SCHEMA':False,
-      }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'BIT_exe',
+        'HOST': 'localhost',
+        'PORT': 27017,
+        'ENFORCE_SCHEMA':False,
+    }
 }
+DATABASE_ROUTERS = ['registration.router.DBRouter']
+
+# DATABASES = {
+#     'default': {
+#           'ENGINE': 'djongo',
+#           'NAME': 'BIT_exe',
+#           'HOST': 'localhost',
+#           'PORT': 27017,
+#           'ENFORCE_SCHEMA':False,
+#       }
+#     # 'default': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME': BASE_DIR / 'db.sqlite3',
+#     # }
+# }
+# AUTHENTICATION_BACKENDS = ['registration.backends.MongoDBBackend']
 
 
 # Password validation

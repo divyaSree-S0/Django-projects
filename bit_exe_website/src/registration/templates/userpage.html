@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Organization</title>
+    {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <style>
+      body {
+        color: #6a6f8c;
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        background:  url({% static 'newmine.png' %}) ;
+        
+    }
+    </style>   
+</head>
+<body>
+
+<!-- js of footer -->
+<script>window.onscroll = function() {
+    if (window.scrollY >= document.documentElement.scrollHeight - window.innerHeight) {
+      document.getElementById("main-footer").style.opacity = 1;
+    } else {
+      document.getElementById("main-footer").style.opacity = 0;
+    }
+  };
+  </script>
+  <!--js of footer-->
+
+  <div style="background-color: darkblue; height: 20px;"></div>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 border-bottom bg-body-tertiary">
+        <div class="col-md-3 mb-2 mb-md-0 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-4 border-bottom bg-body-tertiary">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <img src="{% static 'logo.png' %}" alt="" class="bi" width="300" height="60">
+            </a>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary" aria-current="page">Home</a></li>
+            <li><a href="{% url 'about' %}" class="nav-link px-2 link-secondary rgba-blue-light">About Us</a></li>
+            <li><a href="{% url 'realtime' %}" class="nav-link px-2 link-secondary rgba-blue-light">Real-time Maintenance</a></li>
+        </ul>
+
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle me-4"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small bg-dark" style="color: white;">
+              <li><a class="dropdown-item" href="{% url 'profile' %}">
+                      <label for="Profile" style="color: white;">Profile</label>
+                  </a></li>
+              <li>
+                  <hr class="dropdown-divider-white">
+              </li>
+              <li><a class="dropdown-item mb-2" href="{% url 'home' %}">
+                      <label for="Sign Out" style="color: white;">Sign Out</label>
+                  </a></li>
+          </ul>
+      </div>
+    </header>
+
+<!-- Container with Jumbotron -->
+<div class="container mt-4">
+    <div class="jumbotron1">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Your organization's image -->
+                
+                <img src="https://mines.gov.in/admin/storage/app/uploads/6555fdee64daf1700134382.png" alt="Your Organization" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <!-- Paragraph regarding the organization -->
+                <h2>Ministry Of Mines  Organization</h2>
+                <p>
+                  The Ministry of Mines, established in 1956, plays a pivotal role in India's economic and industrial growth. 
+                  Its responsibilities range from formulating policies to managing the National Mineral Development Fund, promoting sustainable
+                   mining practices and improving exploration activities. Key achievements include increased
+                    mineral production, enhanced exploration, and boosted exports.
+                </p>
+                <p>
+                  Challenges lie in environmental sustainability, responsible mining practices, and attracting investments. 
+                  The future outlook emphasizes balanced development, technological advancements, and ensuring fair benefits for all stakeholders.
+                   By addressing these challenges and leveraging opportunities, the Ministry can significantly contribute to India's progress and a brighter future.
+                </p>
+                <!-- Add more paragraphs as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="jumbotron2">
+        <div class="row">
+            
+            <div class="col-md-6">
+                <!-- Paragraph regarding the organization -->
+                <h2>Our History</h2>
+                <p>
+                  Established in 1956, the Ministry of Mines laid the foundation for India's mining sector through regulatory frameworks and exploration activities. 
+                  Witnessing steady growth, it transitioned to liberalization and privatization in 1991, emphasizing sustainability and increasing exports.
+                </p>
+                <p>
+                  Recent reforms, like online auctions and the National Mineral Development Fund, promote transparency and responsible mining practices. Looking ahead,
+                   the Ministry aims to balance economic development with environmental concerns through technological innovation, investments, and equitable benefits.
+                </p>
+                <!-- Add more paragraphs as needed -->
+            </div>
+            <div class="col-md-6">
+              <!-- Your organization's image -->
+              <img src="https://devdiscourse.blob.core.windows.net/devnews/08_02_2019_18_10_37_6519649.jpg" alt="Your Organization" class="img-fluid">
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-4">
+  <div class="jumbotron3">
+      <div class="row">
+          <div class="col-md-6">
+              <!-- Your organization's image -->
+              <img src="https://pibindia.files.wordpress.com/2017/12/major-achievements-of-ministry-of-mines.jpg?w=1200" alt="Your Organization" class="img-fluid">
+          </div>
+          <div class="col-md-6">
+              <!-- Paragraph regarding the organization -->
+              <h2>Our Achievements</h2>
+              <p>
+                The Ministry of Mines has achieved remarkable progress, including increased mineral production, enhanced exploration activities, and boosted exports.
+                 Reforms like online auctions and the National Mineral Development Fund promote transparency and responsible mining. The Ministry's future focus is 
+                on balancing economic development with environmental concerns through technological innovation, 
+                investments, and ensuring fair benefits for all stakeholders.
+              </p>
+              
+              <!-- Add more paragraphs as needed -->
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--foooter-->
+<div>
+    <footer id="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-links">
+            <nav>
+              <h3 class="footer h3">Related Links</h3>
+              <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+              </ul>
+            </nav>
+            <address class="footer-address">
+              <h3 class="footer h3">Address</h3>
+              <p>123 Main Street<br>Anytown, CA 12345</p>
+              <p>Phone: (123) 456-7890</p>
+              <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            </address>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="copyright">Copyright © 2023 My Company. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <!---footerrr-->
+
+<!-- Bootstrap JS and Popper.js scripts of home -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6Q1TKl8ukl7Vilxs8VO3ApmF1g9CC"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

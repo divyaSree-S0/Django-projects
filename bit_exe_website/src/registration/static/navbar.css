@@ -1,102 +1,71 @@
+
+.Heading {
+    color: black;
+    font-style: oblique;
+}
+
+.home {
+    font-size: 23px;
+    font-weight: bold;
+    color: black;
+}
+
+.SL {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.BL1 {
+    color: wheat;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    border-bottom: 3px solid burlywood;
+    /* Adjust the thickness and color as needed */
+}
+
+.size {
+    font-size: 20px;
+    color: white;
+}
+
+.custom-box-shadow {
+    box-shadow: 0px 6px 8px grey;
+    /* Adjust the values as needed */
+}
+
+.custom-container {
+    max-width: 100%;
+    background-color: antiquewhite;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    /* color: #6a6f8c;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); */
+    /* background:  url("newmine.jpeg") ; */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
 }
 
-#top-nav, #main-nav {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-left: -0px;
+.container {
+    margin-top: 80px;
 }
 
-#top-nav {
-  background-color: rgb(3, 20, 83);
-  height: 20px;
-  border-bottom: 1px solid #ddd;
+.dark-background {
+    background-color: #343a40;
+    /* Adjust the color as needed */
+    color: white;
+    /* Adjust the text color as needed */
 }
 
-#top-nav img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  padding: 10px;
+ul.nav li a:hover {
+    color: orange !important;
 }
-
-#main-nav {
-  background-color: #faf7f7;
-  color: #080808;
-  padding: 15px;
-  width: 98%;
-  height: 45px;
-}
-
-#main-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  
-  transform: translateX(-150%);
-  
-}
-#main-nav img {
-    float: left;
-    width: 350px;
-    height: 65px;
-    margin: 0 auto;
-    vertical-align: left;
-    transform: translateX(-95%);
-   
-  }
-
-
-#main-nav li {
-  margin: 0;
-}
-
-#main-nav li a {
-  color: #060606;
+.dropdown-menu li a:hover {
   text-decoration: none;
-  padding: 10px;
-  
-  
-  &:hover {
-    color: #e9b170;
-    
-    background-color: transparent;
-  }
+  background-color: gainsboro !important;
+  /* Remove underline on hover */
 }
-
-button {
-   
-    padding: 10px 15px;
-    margin-left: 20px;
-     float: right;
-   border-radius: 80px;
-  cursor: pointer;
-  font-weight: 200px;
-  border: 1px solid #514d4d;
-}
-
-button:hover {
-  color: black;
-  background-color: rgba(236, 224, 171, 0.8);
-}
-img.login-icon {
-
-    width: 15px;
-    height: 15px;
-
-    
-  }
- 
-  
-  
-  
-
