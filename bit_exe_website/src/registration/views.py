@@ -24,6 +24,7 @@ def LoginView(request):
                 user = Users.objects.get(user=username)
         except Users.DoesNotExist:
                 user = None
+        print(f"Hashed password during login: {user.passw if user else 'No user found'}")
         print(user,user.passw)
         if user and check_password(password, user.passw):
                 print("yes")
@@ -70,8 +71,9 @@ def SignupView(request):
                     mine_location=mine_location,
                     collection_name=username+"0"
                 )
-            user_data.save()
-                # print(user_data)
+            print(f"Hashed password during signup: {user_data.passw}")
+            # user_data.save()
+            print(f"Hashed password during signup: {user_data.passw}")
             return redirect('login')
     return render(request,'signup.html')
 
