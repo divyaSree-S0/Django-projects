@@ -1,132 +1,11 @@
-{% comment %} {% load static %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conveyor Maintenance System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        h1 {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-
-        main {
-            padding: 1em;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #333;
-            color: #fff;
-        }
-    </style>
-    <link rel="stylesheet" href="{% static 'navbar.css' %}">
-</head>
-<body>
-    {% include "Navbar.html"%}
-        <h1>Conveyor Maintenance System</h1>
-    <main>
-        <section id="pulleyStatus">
-            <h2>Real-time Pulley Status</h2>
-            <div id="pulleyImages">
-                
-            </div>
-            <div id="alerts"></div>
-        </section>
-
-        <section id="maintenanceSchedule">
-            <h2>Maintenance Schedule</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Pulley ID</th>
-                        <th>Scheduled Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="scheduleBody"></tbody>
-            </table>
-        </section>
-    </main>
-    <footer>
-        <!-- Add a footer if needed -->
-    </footer>
-
-    <script>
-        // You can add your JavaScript code here to dynamically update the content
-        // For simplicity, this example assumes some static data
-        document.addEventListener("DOMContentLoaded", function () {
-            // Dummy data for the maintenance schedule
-            const maintenanceData = [
-                { id: 1, pulleyID: "P001", scheduledDate: "2023-12-15" },
-                { id: 2, pulleyID: "P002", scheduledDate: "2023-12-20" },
-                // Add more data as needed
-            ];
-
-            // Display maintenance schedule
-            const scheduleBody = document.getElementById("scheduleBody");
-            maintenanceData.forEach((item) => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td>${item.pulleyID}</td>
-                    <td>${item.scheduledDate}</td>
-                    <td><button onclick="performMaintenance(${item.id})">Perform Maintenance</button></td>
-                `;
-                scheduleBody.appendChild(row);
-            });
-
-            // Dummy data for pulley images and alerts
-            const pulleyImagesDiv = document.getElementById("pulleyImages");
-            pulleyImagesDiv.innerHTML = `<img src="path/to/image1.jpg" alt="Pulley Image 1">`;
-
-            const alertsDiv = document.getElementById("alerts");
-            alertsDiv.innerHTML = `<p>Alert: Pulley P001 is showing signs of wear. Schedule maintenance.</p>`;
-        });
-
-        // Function to simulate performing maintenance
-        function performMaintenance(id) {
-            alert(`Performing maintenance for item with ID ${id}`);
-        }
-    </script>
-</body>
-</html> {% endcomment %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conveyor Maintenance System</title>
-    <link rel="stylesheet" href="./NavBaar/navbaar.css">
+    {% comment %} <link rel="stylesheet" href="./NavBaar/navbaar.css"> {% endcomment %}
     <style>
        body {
             font-family: Arial, sans-serif;
@@ -188,21 +67,171 @@
     </style>
 </head>
 <body>
- 
+    {% include "Navbar.html" %}
+    <main>
+        {% comment %} <h1>Conveyor Maintenance System</h1>
+        <section id="pulleyStatus">
+            <h2>Real-time Pulley Status</h2>
+            <div id="pulleyImages"></div>
+            <div id="alerts"></div>
+        </section> {% endcomment %}
 
-        <nav id="top-nav"></nav>
+        <section id="maintenanceSchedule">
+            <h2>Maintenance Schedule</h2>
+            <a href="{% url "realtime" %}">Back</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pulley ID</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleBody"></tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <!-- Add a footer if needed -->
+    </footer>
 
-  <nav id="main-nav">
-    <img src="./images/logo.png" id="main-nav img">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Real-time Maintenance</a></li>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Dummy data for the maintenance schedule
+            const maintenanceData = [
+                { id: 1, pulleyID: "P001" },
+                { id: 2, pulleyID: "P002" },
+                { id: 3, pulleyID: "P004" },
+                { id: 4, pulleyID: "P0024" },
+                { id: 5, pulleyID: "P002" },
+                { id: 6, pulleyID: "P002" },
+                { id: 7, pulleyID: "P002" },
+                { id: 8, pulleyID: "P002" },
+                // Add more data as needed
+            ];
+
+            // Display maintenance schedule
+            const scheduleBody = document.getElementById("scheduleBody");
+            maintenanceData.forEach((item) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.pulleyID}</td>
+                    <td class="action-column" onclick="performMaintenance(${item.id}, 'https://www.cranemec.co.za/wp-content/uploads/2020/12/sheave-main.jpg')">
+                        <img src="https://www.cranemec.co.za/wp-content/uploads/2020/12/sheave-main.jpg" alt="Maintenance in progress">
+                    </td>
+                `;
+                scheduleBody.appendChild(row);
+            });
+
+            // Dummy data for pulley images and alerts
+            const pulleyImagesDiv = document.getElementById("pulleyImages");
+            //pulleyImagesDiv.innerHTML = `<img src="" alt="Pulley Image 1">`;
+
+            const alertsDiv = document.getElementById("alerts");
+            alertsDiv.innerHTML = `<p>Alert: Pulley P001 is showing signs of wear. Schedule maintenance.</p>`;
+        });
+
+        // Function to simulate performing maintenance
+        function performMaintenance(id, imagePath) {
+            // alert(`Performing maintenance for item with ID ${id}`);
+            const pulleyImagesDiv = document.getElementById("pulleyImages");
+            const imageElement = document.createElement("img");
+            imageElement.src = imagePath;
+            imageElement.alt = "Maintenance in progress";
+
+            const scheduleBody = document.getElementById("scheduleBody");
+            const row = scheduleBody.querySelector(`tr:nth-child(${id}) .action-column`);
+            row.innerHTML = '';
+            row.appendChild(imageElement);
+
+            const pulleyContentData = getPulleyContentData(id);
+            displayPulleyContentData(pulleyContentData);
+        }
+
+        // Dummy function to get pulley content data
+        function getPulleyContentData(id) {
+            // Replace with your logic to fetch data
+            return { id, content: "Pulley content data" };
+        }
+
+        // Dummy function to display pulley content data
+        function displayPulleyContentData(data) {
+            // Replace with your logic to display data
+            console.log(data);
+        }
+    </script>
+</body>
+</html>
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conveyor Maintenance System</title>
+    <link rel="stylesheet" href="{% static "navbar.css" %}">
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 4em;
+            text-align: center;
+        }
+
+        main {
+            padding: 1em;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        td.action-column {
+            text-align: center;
+        }
+
+        td.action-column img {
+            max-width: 50px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        td.action-column img:hover {
+            transform: scale(10);
+        } /* Adjust the scale factor as needed */
         
-      </ul>
-      <a class="cta" href="#"><button> Login/Register </button></a>
-  </nav>
-        
+    </style>
+</head>
+<body>
+    {% include "Navbar.html" %}
    
     <main>
         <h1>Conveyor Maintenance System</h1>
@@ -295,4 +324,4 @@
         }
     </script>
 </body>
-</html>
+</html> {% endcomment %}

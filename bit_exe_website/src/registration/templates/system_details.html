@@ -36,13 +36,13 @@
         </button>
         <ul class="dropdown-menu dropdown-menu-dark">
             <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url "createsystem" %}">
                     <label for="action" class="size">Add System</label>
                 </a>
             </li>
             <li class="dropdown">
                 <div class="btn-group dropend">
-                    <button type="button" class="btn btn-secondary">
+                    <button type="button" class="btn btn-secondary ">
                         <label class="size">Choose System</label>
                     </button>
                     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
@@ -50,26 +50,26 @@
                         <span class="visually-hidden">Toggle Dropend</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Kaveri</label>
                             </a>
                         </li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Godavari</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Yamuna</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Saraswati</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Ganga</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Narmda</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Saryu</label>
                             </a></li>
                     </ul>
@@ -148,22 +148,18 @@
                                                         <label for="name" class="text-white">Email-id</label>
                                                         <input type="email" id="name" name="Email-id"
                                                             class="form-control text-dark mb-1 required">
-    
                                                     </div>
                                                 </div>
                                                 </div>
                                     
                                             <div class="col-md-12 ">
                                                 <div class="md-form form-group">
-                                                    <label for="" class="text-white">Your Message</label>
+                                                    <label for="" class="text-white">Feedback</label>
                                                     <textarea name="message" id="message" cols="50" rows="4"
-                                                        class="form-control md-textarea text-dark required"
-                                                        ></textarea>
+                                                        class="form-control md-textarea text-dark required"></textarea>
 
                                                 </div>
                                             </div>
-
-
                                         </form>
                                     </div>
                                 </div>

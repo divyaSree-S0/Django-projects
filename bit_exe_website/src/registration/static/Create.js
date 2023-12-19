@@ -37,9 +37,14 @@ function validate(val) {
         flag6 = validateField(v6);
     }
 
-    let flag = flag1 && flag2 && flag3 && flag4 && flag5 && flag6;
+    // let flag = flag1 && flag2 && flag3 && flag4 && flag5 && flag6;
 
-    return flag;
+    // if (flag) {
+    //     // Show a pop-up message at the top of the page
+    //     showSuccessMessage("Form submitted successfully!");
+    // }
+
+    // return flag;
 }
 
 function validateField(field) {
@@ -51,3 +56,48 @@ function validateField(field) {
         return true;
     }
 }
+
+function showSuccessMessage(message) {
+    // Create a dynamic message element
+    let successMessage = document.createElement("div");
+    successMessage.className = "success-message";
+    successMessage.innerHTML = message;
+
+    // Insert the message at the top of the body
+    // document.body.insertBefore(successMessage, document.body.firstChild);
+
+    // Remove the message after a certain time (e.g., 5 seconds)
+    setTimeout(() => {
+        document.body.removeChild(successMessage);
+    }, 5000); // 5000 milliseconds = 5 seconds
+}
+const mainNav = document.getElementById('main-nav');
+const navLinks = document.querySelector('#main-nav ul');
+const ctaButton = document.querySelector('.cta button');
+const menuIcon = document.querySelector('.menu-icon');
+
+// Function to toggle the visibility of the navigation links
+function toggleNav() {
+  console.log('Toggling navigation');
+  navLinks.classList.toggle('show');
+}
+
+// Event listener for the "Login/Register" button
+ctaButton.addEventListener('click', function() {
+  console.log('Button clicked');
+  toggleNav();
+});
+
+// Event listener for the menu icon on smaller screens
+menuIcon.addEventListener('click', function() {
+  console.log('Menu icon clicked');
+  toggleNav();
+});
+
+// Event listener for window resize
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 768) {
+    console.log('Removing show class');
+    navLinks.classList.remove('show');
+  }
+});

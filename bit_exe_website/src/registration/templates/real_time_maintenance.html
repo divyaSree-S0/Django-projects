@@ -41,7 +41,7 @@
         <ul class="dropdown-menu dropdown-menu-dark">
             <li>
                 <a class="dropdown-item" href="/createsystem">
-                    <label for="action" class="size">Create System</label>
+                    <label for="action" class="size">Add System</label>
                 </a>
             </li>
             <li class="dropdown">
@@ -58,22 +58,22 @@
                                 <label for="action" class="size">Kaveri</label>
                             </a>
                         </li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Godavari</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Yamuna</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Saraswati</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Ganga</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Narmda</label>
                             </a></li>
-                        <li><a class="dropdown-item" href="#">
+                        <li><a class="dropdown-item" href="{% url "realtime" %}">
                                 <label for="action" class="size">Saryu</label>
                             </a></li>
                     </ul>
@@ -97,7 +97,10 @@
             <div class="h-56 p-5 text-bg-dark border rounded-5 custom-box-shadow">
                 <h2>80% Damaged</h2>
                 <p>Urgent replacment required!! </p>
-                <button type="button" class="btn btn-outline-danger">Check Out</button>
+                <button type="button" onclick="location.href='{% url "conveyor" %}'" class="btn btn-outline-danger">
+                    Check Out
+                    {% comment %} <a href="{% url "conveyor" %}">Check Out</a> {% endcomment %}
+                </button>
             </div>
         </div>
         <div class="col-md-3 ms-auto">
@@ -114,13 +117,16 @@
     </div>
 
     <!-- Second Row -->
-    <div class="row mt-4">
+    <div class="row mt-4 mb-4">
         <div class="col-md-8">
             <!-- First Column Content (No Box) -->
             <div class="h-56 p-5 text-bg-dark border rounded-5 custom-box-shadow">
-                <h2>60% Damaged</h2>
+                <h2>20% Damaged</h2>
                 <p>Continuous observation required. Better to replace soon!</p>
-                <button type="button" class="btn btn-outline-warning">Check Out</button>
+                <button type="button" onclick="location.href='{% url "conveyor" %}'" class="btn btn-outline-warning">
+                    Check Out
+                    {% comment %} <a href="{% url "conveyor" %}">Check Out</a> {% endcomment %}
+                </button>
             </div>
         </div>
         <div class="col-md-3 ms-auto">
@@ -135,7 +141,7 @@
             </div>
         </div>
     </div>
-
+{% comment %} 
     <!-- Third Row -->
     <div class="row mt-5">
         <div class="col-md-8">
@@ -152,11 +158,11 @@
 
 
             </div>
-        </div>
+        </div> {% endcomment %}
     </div>
 
     <!-- Fourth Row -->
-    <div class="row mt-5 mb-4">
+    {% comment %} <div class="row mt-5 mb-4">
         <div class="col-md-8">
             <!-- First Column Content (No Box) -->
             <div class="h-56 p-5 text-bg-dark border rounded-5 custom-box-shadow">
@@ -170,7 +176,7 @@
             <div class="h-100 p-5 rounded-3  ">
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
