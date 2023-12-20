@@ -1,131 +1,138 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>About us</title>
+    <style>
+        ul.nav li a:hover {
+            color: orange !important;
+        }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'footer.css' %}">
-    <link rel="stylesheet" href="{% static 'navbar.css' %}">
-    {% comment %} <style>
-        .Heading {
-            color: black;
-            font-style: oblique;
-        }
-        .home {
-            font-size: 23px;
-            font-weight: bold;
-            color: black;
-        }
-        .SL {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .BL1 {
-            color: wheat;
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style> {% endcomment %}
-</head>
-<body>
-    <script>window.onscroll = function () {
-        if (window.scrollY >= document.documentElement.scrollHeight - window.innerHeight) {
-            document.getElementById("main-footer").style.opacity = 1;
-        } else {
-            document.getElementById("main-footer").style.opacity = 0;
-        }
-    };
-    </script>
-    {% include 'Navbar.html' %}
 
-        
-    {% comment %} <div style="background-color: darkblue; height: 20px;"></div>
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "about.css" %}" />
+    <link rel="stylesheet" href="{% static "footer.css" %}">
+    <!-- <link rel="stylesheet" href="./mobile-style.css"> -->
+</head>
+{% include "Navbar.html" %}
+
+{% comment %} <body>
+    <div style="background-color: darkblue; height: 20px;"></div>
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 border-bottom bg-body-tertiary">
-        <div class="col-md-3 mb-2 mb-md-0 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-4 border-bottom bg-body-tertiary">
+        <div class="col-md-3 me-5 mb-2 mb-md-0">
             <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                <img src="{% static 'logo.png' %}" alt="" class="bi" width="300" height="60">
+                <img src="{% static "logo.png" %}" alt="" class="bi" width="300" height="60">
             </a>
         </div>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary" aria-current="page">Home</a></li>
-            <li><a href="{% url 'about' %}" class="nav-link px-2 link-secondary rgba-blue-light">About Us</a></li>
-            <li><a href="{% url 'realtime' %}" class="nav-link px-2 link-secondary rgba-blue-light">Real-time Maintenance</a></li>
+        <ul class="nav col-14 col-md-auto mb-2 ms-auto justify-content-center mb-md-0">
+            <li><a href="/" class="nav-link px-2 link-secondary" aria-current="page">Home</a></li>
+            <li><a href="/about" class="nav-link px-2 link-secondary rgba-blue-light">About Us</a></li>
+            <li><a href="/realtime" class="nav-link px-2 link-secondary rgba-blue-light">Real-time Maintenance</a></li>
         </ul>
+
+        {% comment %} <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-secondary rounded-5 me-4 ms-auto">Login/Sign-up</button>
+            <!-- <button type="button" class="btn btn-primary"></button> -->
+        </div> {% endcomment % }
+
         <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle me-4"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small bg-dark" style="color: white;">
-                <li><a class="dropdown-item" href="{% url 'profile' %}">
-                        <label for="Profile" style="color: white;">Profile</label>
-                    </a></li>
-                <li>
-                    <hr class="dropdown-divider-white">
-                </li>
-                <li><a class="dropdown-item mb-2" href="{% url 'home' %}">
-                        <label for="Sign Out" style="color: white;">Sign Out</label>
-                    </a></li>
+              <li><a class="dropdown-item" href="#">
+                <label for="Profile" style="color: white;">Profile</label>
+              </a></li>
+              <li><hr class="dropdown-divider-white"></li>
+              <li><a class="dropdown-item mb-2" href="/">
+                <label for="Sign Out" style="color: white;">Sign Out</label>
+              </a></li>
             </ul>
-        </div>
+          </div>
+
     </header> {% endcomment %}
-    <div class="section-title">
-        <h2 class="text-decoration-underline px-3" style="color: brown; font-weight: bold;">About</h2>
-        <p>
-        <h4 style="font-style: italic; color: black; font-weight: bold; align-content: center;">"Revolutionizing
-            Conveyor Reliability: Predictive Maintenance through Smart ML Solutions"</h4>
-        </p>
-    </div>
+    
+    
+        <section class="section-1">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="pray">
+                            <img src="https://www.westriverconveyors.com/wp-content/uploads/2021/09/conveyor-img-1024x683.jpg" alt="Pray" class="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="panel text-left">
+                            <h1>PROBLEM STATEMENT</h1>
+                            <p class="pt-4">
+                                Our solution involves deploying advanced machine learning algorithms
+                                that analyze past performance data, enabling us to foresee pulley wear and identify vulnerable
+                                points. This proactive strategy empowers us to schedule timely replacements, preventing unexpected
+                                downtime and optimizing the overall efficiency of the conveyor system.
 
-    <div class="container my-4">
-        <div class="row featurette d-flex justify-content-center align-items-center">
-            <div class="col-md-7 order-md-2">
-                <h4 class="featurette-heading fw-normal lh-1"> <span class="text-body-dark"
-                        style="font-style: oblique;"><b><u>Problem Statement</u></b></span></h4>
-                <p class="lead bg-body-tertiary">Within our intricate conveyor systems, comprising over 18,000 poly
-                    pulleys, a persistent challenge arises due to the frequent wear and tear experienced by these
-                    crucial components. The core issue lies in the operational disruptions caused by the wear and tear,
-                    often leading to unplanned stoppages of the conveyor system. These unexpected halts force us into
-                    emergency replacements to resume normal functionality promptly. The repercussions extend beyond mere
-                    interruptions in our day-to-day operations, as the reactive approach to pulley failures incurs
-                    substantial costs. The financial burden associated with emergency replacements adds complexity to
-                    our operational landscape, prompting the need for a more proactive and sustainable solution.</p>
+                                This heading and structure convey a sense of innovation and problem-solving, highlighting the use of
+                                ML for predictive maintenance in the context of your conveyor system. Feel free to customize it
+                                further to align with your brand voice and style.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem
+                                eum aliquid vel labore sint placeat
+                                ad deserunt consectetur fugit ullam. Eius unde neque ducimus obcaecati ipsum quos vero
+                                totam recusandae hic
+                                expedita nemo sit, illum harum. Quisquam impedit ullam itaque facere et ad molestiae
+                                quod reprehenderit excepturi!
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" src="{% static 'ps1.jpg' %}" alt="">
-            </div>
-        </div>
-        <div class="row featurette d-flex justify-content-center align-items-center min-height-content">
-            <div class="col-md-7 ">
-                <h4 class="featurette-heading fw-normal lh-1"> <span class="text-body-dark"
-                        style="font-style: oblique;"><b><u>Proposed Solution</u></b></span></h4>
-                <p class="lead bg-body-tertiary">Our solution involves deploying advanced machine learning algorithms
-                    that analyze past performance data, enabling us to foresee pulley wear and identify vulnerable
-                    points. This proactive strategy empowers us to schedule timely replacements, preventing unexpected
-                    downtime and optimizing the overall efficiency of the conveyor system.
+        </section>
 
-                    This heading and structure convey a sense of innovation and problem-solving, highlighting the use of
-                    ML for predictive maintenance in the context of your conveyor system. Feel free to customize it
-                    further to align with your brand voice and style.</p>
+        <section class="section-1">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="panel1 text-left">
+                            <h1>PROBLEM SOLUTION</h1>
+                            <p class="pt-4">
+                                Our innovative solution revolutionizes conveyor system management through the deployment of advanced machine learning algorithms. 
+                                By meticulously analyzing historical performance data, we gain a deep understanding of pulley wear patterns and identify potential vulnerabilities. 
+                                This proactive approach allows us to schedule timely replacements, preventing unexpected downtime and optimizing overall system efficiency.
+                                 Complementing this cutting-edge strategy, we've developed a user-friendly mobile application and a robust website. 
+                                 These platforms provide real-time monitoring, data visualization, and predictive insights, empowering users to access conveyor system health status, receive alerts, 
+                                 and view maintenance schedules seamlessly on their mobile devices or desktop computers. The integration of 
+                                machine learning algorithms and intuitive applications marks a paradigm shift, offering unparalleled efficiency and reliability in conveyor system maintenance.
+                            </p>
+                            <p>
+                                In embracing the era of Industry 4.0, our solution not only leverages advanced algorithms for predictive maintenance but also delivers a user-centric experience through our dedicated app and website. 
+                                This digital ecosystem offers stakeholders a comprehensive view of their conveyor systems, enabling them to make informed decisions. 
+                                As a result, our approach not only prevents disruptions but transforms conveyor system management into a streamlined, data-driven process that maximizes uptime and ensures peak operational performance.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="pray2">
+                            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS2Y9-rXFnjvCibAAsoJMhA0HK949-IENBkk1j2FZndUEhV58ev" alt="Pray" class="" />
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" src="{% static 'solution.jpg' %}" alt="">
-            </div>
-        </div>
-    </div>
-    {% include 'footer.html' %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6Q1TKl8ukl7Vilxs8VO3ApmF1g9CC"
-    crossorigin="anonymous"></script>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        {% include "footer.html" %}
 </body>
-</html>

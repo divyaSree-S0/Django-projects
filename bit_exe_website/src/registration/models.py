@@ -46,5 +46,10 @@ class Conveyors(models.Model):
     industry = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'Conveyors'
+        db_table =  'Conveyors'
         app_label = 'mongodb'
+
+    # def create_collection(request,user):
+    #     # user = Users.objects.get(username=request.session['username'])
+    #     user._meta.db.create_collection(user.collection_name+"1")
+

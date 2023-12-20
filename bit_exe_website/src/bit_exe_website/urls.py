@@ -34,4 +34,5 @@ urlpatterns = [
     path('systemdetails/',SystemDetailsView,name='systemdetails'),
     path('userpage/',UserPageView,name='userpage'),
     path('createsystem/',CreateSystemView,name='createsystem'),
+    # path('verification/',VerificationView,name='verification')
 ]
